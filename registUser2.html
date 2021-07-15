@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>中国铁路12306注册系统</title>
+	</head>
+	<body>
+		<form action="receive2.html">
+			<table align="center">
+				<tr>
+					<td><font color="RED">*</font>用户名：</td>
+					<td>
+						<input type="text" placeholder="用户名设置成功后不可修改">
+					</td>
+					<td>
+						<font color="#FF8C00">6-30位字母、数字或"_",字母开头</font>
+					</td>
+				</tr>
+				<tr>
+					<td><font color="RED">*</font>登录密码：</td>
+					<td>
+						<input type="password" placeholder="6-20位字母、数字或符号">
+					</td>
+				</tr>
+				<tr>
+					<td><font color="RED">*</font>确认密码：</td>
+					<td>
+						<input type="password" placeholder="再次输入您的登陆密码">
+					</td>
+				</tr>
+				<tr>
+					<td><font color="RED">*</font>证件类型：</td>
+					<td>
+						<select>
+							<option>中国居民身份证</option>
+							<option>港澳居民来往内地通行证</option>
+							<option>台湾居民来往大陆通行证</option>
+							<option>护照</option>
+						</select><br>
+						<input type="radio" name="certificates">中国居民身份证<br>
+						<input type="radio" name="certificates">外国人永久居留身份证<br>
+						<input type="radio" name="certificates">港澳台居民居住证
+					</td>
+				</tr>
+				<tr>
+					<td><font color="RED">*</font>姓名：</td>
+					<td>
+						<input type="text" placeholder="请输入姓名">
+					</td>
+					<td>
+						<font color="#FF8C00">姓名填写规则（用于身份核验，请正确填写）</font>
+					</td>
+				</tr>
+				<tr>
+					<td><font color="RED">*</font>证件号码：</td>
+					<td>
+						<input type="text" placeholder="请输入您的证件号码">
+					</td>
+					<td>
+						<font color="#FF8C00">（用于身份核验，请正确填写）</font>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp&nbsp&nbsp邮箱</td>
+					<td>
+						<input type="text" placeholder="请正确填写邮箱地址">
+					</td>
+				</tr>
+				<tr>
+					<td><font color="RED">*</font>手机号码（+86）：</td>
+					<td>
+						<input type="text" placeholder="请输入您的手机号码">
+					</td>
+					<td>
+						<font color="#FF8C00">请正确填写手机号码，稍后将向该手机号码发送短信验证码</font>
+					</td>
+				</tr>
+				<tr>
+					<td><font color="RED">*</font>旅客类型：</td>
+					<td>
+						<select>
+							<option>成人</option>
+							<option>儿童</option>
+							<option>学生</option>
+							<option>残疾军人、伤残人民警察</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td colspan="2">
+						<input type="checkbox">我已阅读并同意遵守<a href="https://www.12306.cn/mormhweb/logFiles/error.html"><<中国铁路客户服务中心网站服务条款》<<隐私权政策》</a>
+					</td>
+				</tr>
+				<tr></tr>
+				<tr></tr>
+				<tr>
+					<td colspan="3" align="center">
+						<input type="submit" value="下一步">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>
