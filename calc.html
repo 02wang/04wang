@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>个人社保计算器</title>
+		<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+ 
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    	function jisuan(){
+    		//1. 获得工资，看输入合法吗？表单验证
+    		//取得文本框里输入的工资
+    		var sal=document.getElementById("salary").value;
+    		//判断工资输入合法吗？正则表达式
+    		var regExp=/^[0-9]{4,5}$/;
+    		if(!regExp.test(sal)){
+    			//输入不合法
+    			document.getElementById("salary").value="必须输入4-5个数字";
+    			document.getElementById("salary").style="color:red";
+    			return;
+    		}
+    		//2. 如果输入合法的话，开始计算
+    		var salNum=parseInt(sal);//把字符串转成数字
+    		var ylgr=salNum*0.08;//个人交的养老保险
+    		var ylgs=salNum*0.2;//公司交的养老保险
+    		document.getElementById("ylgr").innerHTML=ylgr;
+    		document.getElementById("ylgs").innerText=ylgs;
+    		
+    		var ybgr=salNum*0.02;//个人交的医保
+    		var ybgs=salNum*0.06;//公司交的医保
+    		document.getElementById("ybgr").innerText=ybgr;
+    		document.getElementById("ybgs").innerHTML=ybgs;
+    		
+    		var sygr=salNum*0.005;//个人交的失业
+    		var sygs=salNum*0.015;//公司交的失业
+    		document.getElementById("sygr").innerHTML=sygr;
+    		document.getElementById("sygs").innerText=sygs;
+    		
+    		var gs=salNum*0.005;//公司交的工伤
+    		document.getElementById("gs").innerText=gs;
+    		
+    		var sy=salNum*0.008;//公司交的生育
+    		document.getElementById("sy").innerText=sy;
+    		
+    		var gjjgr=salNum*0.12;//个人交的公积金
+    		var gjjgs=salNum*0.12;//公司交的公积金
+    		document.getElementById("gjjgr").innerText=gjjgr;
+    		document.getElementById("gjjgs").innerHTML=gjjgs;
+    		
+    		grhj=ylgr+ybgr+sygr+gjjgr;
+    		gshj=ylgs+ybgs+sygs+gs+sy+gjjgs;
+    		document.getElementById("grhj").innerHTML=grhj;
+    		document.getElementById("gshj").innerText=gshj;
+    		
+    		var zonge=salNum+gshj;//账号总额，工资+公司
+    		document.getElementById("total").innerText=zonge; 
+    	}
+    	//3. 把计算结果放到单元格里
+    	function clearTxt(){
+    		document.getElementById("salary").value="";
+    		document.getElementById("salary").style="color:black";
+    	}
+    </script>
+	</head>
+	<body>
+		<div class="container text-center">
+			<img src="nuclogored.jpg" class="img-circle">
+			<table class="table table-bordered text-center">
+				<tr>
+					<td>工资</td>
+					<td colspan="3">
+						<input onfocus="clearTxt()" type="text" id="salary" placeholder="请输入工资" class="form-control">
+					</td>
+					<td>
+						<button onclick="jisuan()" class="btn btn-danger btn-block">计算</button>
+					</td>
+				</tr>
+				<tr class="bg-primary">
+					<td>险种</td>
+					<td>个人%</td>
+					<td>个人</td>
+					<td>公司%</td>
+					<td>公司</td>
+				</tr>
+				<tr>
+					<td>养老</td>
+					<td>8%</td>
+					<td id="ylgr"></td>
+					<td>20%</td>
+					<td id="ylgs"></td>
+				</tr>
+				<tr>
+					<td>医疗</td>
+					<td>2%</td>
+					<td id="ybgr"></td>
+					<td>6%</td>
+					<td id="ybgs"></td>
+				</tr>
+				<tr>
+					<td>失业</td>
+					<td>0.5%</td>
+					<td id="sygr"></td>
+					<td>1.5%</td>
+					<td id="sygs"></td>
+				</tr>
+				<tr>
+					<td>工伤</td>
+					<td></td>
+					<td></td>
+					<td>0.5%</td>
+					<td id="gs"></td>
+				</tr>
+				<tr>
+					<td>生育</td>
+					<td></td>
+					<td></td>
+					<td>0.8%</td>
+					<td id="sy"></td>
+				</tr>
+				<tr>
+					<td>公积金</td>
+					<td>12%</td>
+					<td id="gjjgr"></td>
+					<td>12%</td>
+					<td id="gjjgs"></td>
+				</tr>
+				<tr>
+					<td>合计</td>
+					<td>个人合计</td>
+					<td id="grhj"></td>
+					<td>公司合计</td>
+					<td id="gshj"></td>
+				</tr>
+				<tr>
+					<td>总额</td>
+					<td id="total" colspan="4"></td>
+				</tr>
+			</table>
+			开发者：王永圣 中北大学软件学院  执行单位：英才科技
+		</div>
+	</body>
+</html>
