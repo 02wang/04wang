@@ -1,62 +1,60 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>教务系统登录</title>
-		<style>
-			body{
-				background-color: #1E9FFF;
-			}
-			#loginDiv{
-				background-color: white;
-				width:440px;
-				height:420px;
-				margin:0 auto;
-				color:#1E9FFF;
-				margin-top:100px;
-				text-align:center;
-				padding-top:20px;
-			}
-			#uname{
-				width:300px;
-				height:35px;
-				border-radius: 5px;
-				border:1px solid lightgray;
-				margin-left:-30px;
-				background-color: transparent;
-				padding-left:35px;
-			}
-			#upsw{
-				width:300px;
-				height:35px;
-				border-radius: 5px;
-				border:1px solid lightgray;
-				margin-left:-30px;
-				background-color: transparent;
-				padding-left:35px;
-				margin-top:15px;
-			}
-			#loginBtn{
-				width:340px;
-				height:35px;
-				margin-top:15px;
-				background-color: #1E9FFF;
-				color:white;
-				border:1px solid #1E9FFF;
-				border-radius:5px;
-			}
-		</style>
-	</head>
-	<body>
-		<div id="loginDiv">
-			<h2>UOLab联合开放实验室管理平台</h2>
-			<img src="images/user.png">
-			<input type="text" placeholder="用户名或者邮箱" id="uname" name="useruname">
-			<br>
-			<img src="images/password.png">
-			<input type="password" placeholder="密码" id="upsw" name="userupsw">
-			<br>
-			<button id="loginBtn">登录</button>
-		</div>
-	</body>
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎登录后台管理系统</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="js/jquery.js"></script>
+<script src="js/cloud.js" type="text/javascript"></script>
+
+<script language="javascript">
+	$(function(){
+    $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
+	$(window).resize(function(){  
+    $('.loginbox').css({'position':'absolute','left':($(window).width()-692)/2});
+    })  
+});  
+</script> 
+
+</head>
+
+<body style="background-color:#df7611; background-image:url(images/light.png); background-repeat:no-repeat; background-position:center top; overflow:hidden;">
+
+
+
+    <div id="mainBody">
+      <div id="cloud1" class="cloud"></div>
+      <div id="cloud2" class="cloud"></div>
+    </div>  
+
+
+<div class="logintop">    
+    <span>欢迎登录后台管理界面平台</span>    
+        
+    </div>
+    
+    <div class="loginbody">
+    
+    <span class="systemlogo"></span> 
+       
+    <div class="loginbox">
+    
+    <ul>
+    <li><input name="" type="text" class="loginuser" value="admin" onclick="JavaScript:this.value=''"/></li>
+    <li><input name="" type="text" class="loginpwd" value="密码" onclick="JavaScript:this.value=''"/></li>
+    <li><input name="" type="button" class="loginbtn" value="登录"  onclick="javascript:window.location='main.html'"  /><label><input name="" type="checkbox" value="" checked="checked" />记住密码</label><label><a href="#">忘记密码？</a></label></li>
+    </ul>
+    
+    
+    </div>
+    
+    </div>
+    
+    
+    
+    <div class="loginbm">版权所有  2013040421 王永圣 中北大学 </div>
+	
+    
+</body>
+
 </html>
